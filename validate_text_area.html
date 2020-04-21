@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curso Javascript Completo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise Text Area Javascript/HTML</h1>
+
+      <textarea id="msg" cols="50" rows="10" maxlength="100"></textarea>
+
+      <div id="container_character" style="display: none;">
+        Missing <span id="character"></span> characters.
+      </div>
+    </div>
+  </body>
+  <script>
+    (function () {
+      "use strict";
+
+      var $txtMsg = document.getElementById("msg");
+      var $containerCharacter = document.getElementById("container_character");
+      var $character = document.getElementById("character");
+      var max = $txtMsg.maxLength;
+
+      showContainerCharacter();
+      showCharactersLeft(max);
+      $txtMsg.addEventListener("input", checkLength);
+
+      function checkLength(e) {
+        var characterLength = this.value.length;
+        var characteresLeft = parseInt(max) - parseInt(characterLength);
+        showCharactersLeft(characteresLeft);
+      }
+
+      function showCharactersLeft(n) {
+        $character.textContent = n;
+      }
+
+      function showContainerCharacter() {
+        $containerCharacter.style.display = "block";
+      }
+    })();
+  </script>
+</html>
