@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curso Javascript Completo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exercise CheckBox Javascript/HTML</h1>
+
+      <form action="#">
+        <textarea cols="50" rows="10" readonly>
+            Service Contract
+        </textarea>
+        <br />
+        <label>
+          <input id="chk" type="checkbox" checked />I have read and accept the
+          terms of this agreement.
+        </label>
+        <br />
+        <input id="btn" type="submit" value="Continue" />
+      </form>
+    </div>
+  </body>
+  <script>
+    (function () {
+      "use strict";
+
+      var $btn = document.getElementById("btn");
+      var $chk = document.getElementById("chk");
+
+      toggleBtn();
+
+      $chk.addEventListener("change", function () {
+        toggleBtn();
+      });
+
+      function toggleBtn() {
+        $btn.disabled = !$chk.checked;
+      }
+    })();
+  </script>
+</html>
