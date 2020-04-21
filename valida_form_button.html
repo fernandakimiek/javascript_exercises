@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript Completo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Exercise Form Javascript/HTML</h1>
+        <form action="#" method="POST">
+            <label for="txtUser">User</label>
+            <input type="text" id="txtUser" name="user">
+            <br>
+            <label for="txtPass">Password</label>
+            <input type="password" id="txtPass" name="pass">
+            <br>
+            <button type="submit" id="btn">Login</button>
+        </form>
+    </div>
+    
+</body>
+<script>
+    (function(){
+        'use strict';
+        var $form = document.querySelector('form');
+        var $txtUser = document.getElementById('txtUser');
+        var $txtPass = document.getElementById('txtPass');
+        var $btn = document.getElementById('btn');
+
+        $form.addEventListener('submit', function(e){
+            if(!$txtUser.value || !$txtPass.value){
+                alert('Please fill in all fields!')
+                e.preventDefault();
+            }
+
+        })
+    })()
+
+</script>
+</html>
